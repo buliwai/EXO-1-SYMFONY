@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet"  href="{{ asset('css/exo_style.css') }}"  />
+</head>
+<body>
+<header >
+    <div id="menu">
+        <img src="/img/logo.png"  width="128" height="128" />
+        <div>
+            <ul >
+                <li><a href="{{ path('accueil') }}">ACCUEIL</a></li>
+                <li>ARTICLE</li>
+                <li>DIVERS</li>
+            </ul>
+        </div>
+
+    </div>
+</header>
+<main id="page_article">
+    {% if article.published %}
+        <article>
+            <h1>{{ article.title }}</h1>
+            <p>{{ article.content }}</p>
+            <div>
+                <img src="{{ article.image }}" />
+            </div>
+
+
+        </article>
+    {% else %}
+        <p>L'article demandé n'est pas en ligne</p>
+    {% endif %}
+
+
+</main>
+<footer>
+    <div id="menu">
+        <img src="/img/logo.png"  width="128" height="128" />
+        <div>
+            <ul >
+                <li>Lien 1</li>
+                <li>Lien 2</li>
+                <li>Lien 3</li>
+            </ul>
+        </div>
+
+    </div>
+</footer>
+</body>
+</html>
